@@ -20,6 +20,7 @@ class StoryPartController extends Controller
             'content' => 'required|string',
             'order' => 'required|integer',
             'file' => 'nullable|file|mimes:jpg,png,pdf|max:2048', // Walidacja pliku
+            'story_id' => 'required|exists:stories,id',
         ]);
 
         // Zapisz plik, jeśli został przesłany
