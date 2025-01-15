@@ -7,6 +7,12 @@ use App\Models\Story;
 
 class StoryController extends Controller
 {
+    // Pobieranie wszystkich części historii
+    public function index()
+    {
+        return response()->json(Story::paginate(10));
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
